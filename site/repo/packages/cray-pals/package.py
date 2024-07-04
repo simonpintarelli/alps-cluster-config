@@ -41,7 +41,7 @@ class CrayPals(Package):
     """Intended to override the main cray-pals"""
 
     homepage = "https://www.hpe.com/us/en/compute/hpc/hpc-software.html"
-    url = "https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-pals-1.2.12.tar.gz"
+    url = "file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-pals-1.2.12.tar.gz"
     maintainers = ["simonpintarelli"]
 
     for ver, packages in _versions.items():
@@ -51,7 +51,7 @@ class CrayPals(Package):
             version(
                 ver,
                 sha256=sha,
-                url=f"https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-pals-{ver}.{platform.machine()}.tar.gz",
+                url=f"file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-pals-{ver}.{platform.machine()}.tar.gz",
             )
 
     # Fix up binaries with patchelf.

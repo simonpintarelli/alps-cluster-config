@@ -48,7 +48,7 @@ class CrayGtl(Package):
     """Install cray-gtl"""
 
     homepage = "https://www.hpe.com/us/en/compute/hpc/hpc-software.html"
-    url = "https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-gtl-8.1.26.tar.gz"
+    url = "file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-gtl-8.1.26.tar.gz"
     maintainers = ["bcumming", "simonpintarelli"]
 
     for ver, packages in _versions.items():
@@ -58,7 +58,7 @@ class CrayGtl(Package):
             version(
                 ver,
                 sha256=sha,
-                url=f"https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-gtl-{ver}.{platform.machine()}.tar.gz",
+                url=f"file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-gtl-{ver}.{platform.machine()}.tar.gz",
             )
 
     variant("cuda", default=False)

@@ -50,7 +50,7 @@ class CrayMpich(Package):
     """Intended to override the main cray-mpich"""
 
     homepage = "https://www.hpe.com/us/en/compute/hpc/hpc-software.html"
-    url = "https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-mpich-8.1.26.tar.gz"
+    url = "file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-mpich-8.1.26.tar.gz"
     maintainers = ["bcumming"]
     for ver, packages in _versions.items():
         key = "{0}-{1}".format(platform.system(), platform.machine())
@@ -59,7 +59,7 @@ class CrayMpich(Package):
             version(
                 ver,
                 sha256=sha,
-                url=f"https://jfrog.svc.cscs.ch/artifactory/cray-mpich/cray-mpich-{ver}.{platform.machine()}.tar.gz",
+                url=f"file:///capstor/scratch/cscs/simonpi/cray-mpich/cray-mpich-{ver}.{platform.machine()}.tar.gz",
             )
 
     variant("cuda", default=False)
